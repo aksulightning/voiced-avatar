@@ -1,5 +1,5 @@
 // I recommend use the script in Unity LTS 2018.4.x.
-// Don't forget import TextMeshPro.
+// Don't forget import Text Mesh Pro into the Unity Project.
 // The code written by Aksu Lightning.
 // The license of the code is "MIT".
 // "I want keep the code simple as possible." - Aksu Lightning
@@ -7,7 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Please import Text Mesh Pro into your project before for using script.
+using TMPro;
 
 [RequireComponent (typeof (AudioSource))]
 public class MicrophoneToAnimation : MonoBehaviour
