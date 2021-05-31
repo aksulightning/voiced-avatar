@@ -1,4 +1,4 @@
-// I recommend use the code in Unity LTS 2018.4.x.
+// I recommend use the script in Unity LTS 2018.4.x.
 // Don't forget import TextMeshPro.
 // The code written by Aksu Lightning.
 // The license of the code is "MIT".
