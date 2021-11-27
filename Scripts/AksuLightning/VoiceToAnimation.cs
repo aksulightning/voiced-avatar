@@ -1,8 +1,7 @@
-// I recommend use the script in Unity LTS 2018.4.x.
-// Don't forget import Text Mesh Pro into the Unity Project.
-// The code written by Aksu Lightning.
-// The license of the code is "MIT".
-// "I want keep the code simple as possible." - Aksu Lightning
+// voiced-avatar, VoiceToAnimation.cs
+// Script written by Aksu Lightning. The license of the project is "MIT".
+// I recommend use the script in Unity LTS 2018.4.x, also works in Unity 2020.3.x.
+// Don't forget import Text Mesh Pro's all assets into your Unity project.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ using UnityEngine;
 using TMPro;
 
 [RequireComponent (typeof (AudioSource))]
-public class MicrophoneToAnimation : MonoBehaviour
+public class VoiceToAnimation : MonoBehaviour
 {
     // Complex settings
     [Tooltip("Set a avatar to play mouth moving animation, please animate the avatar first.")]
