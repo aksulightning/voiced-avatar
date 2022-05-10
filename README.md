@@ -2,6 +2,7 @@
 A Unity Script that triggers a animation from Animator. 
 
 Quick tutorial, I guess:
+
 You need a microphone and the microphone settings need to be set volume to lower or the script will not work.
 
 You need empty gameobject for script and animator in your avatar (or whatever your object is) and animator trigger. 
