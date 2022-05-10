@@ -1,7 +1,14 @@
 # voiced-avatar
-A Unity Script, to make a avatar to talk (with a simple mouth movement animation) in real time, when talking to the microphone.
+A Unity Script that triggers a animation from Animator. 
+
+Quick tutorial, I guess:
+You need a microphone and the microphone settings need to be set volume to lower or the script will not work.
+
+You need empty gameobject for script and animator in your avatar (or whatever your object is) and animator trigger. 
+
+You need animate your avatar (or object) with single animation and setting a trigger to play that animation from animator.
 
 Requirements:
-Unity 2020.3.x or 2018.4.x
+Unity LTS 2021.3.x or higher
 
 MIT-License
