@@ -1,12 +1,10 @@
 // voiced-avatar, VoiceToAnimation.cs
 // Script written by Aksu Lightning. The license of the project is "MIT".
-// I recommend use the script in Unity LTS 2018.4.x, also works in Unity 2020.3.x.
-// Don't forget import Text Mesh Pro's all assets into your Unity project.
+// Script works in Unity LTS 2021.3.x or higher.
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 [RequireComponent (typeof (AudioSource))]
 public class VoiceToAnimation : MonoBehaviour
@@ -15,8 +13,8 @@ public class VoiceToAnimation : MonoBehaviour
     [Tooltip("Set a avatar to play mouth moving animation, please animate the avatar first.")]
     public GameObject _avatar;
     private Animation anim;
-    [Tooltip("Insert here Animation Bool Name to animate and it need to be a Bool on Animator.")]
-    public string _animationBoolName;
+    [Tooltip("Insert here Animation Trigger Name to animate and it need to be a Trigger on Animator.")]
+    public string _animationTriggerName;
     [Tooltip("Audio Source")]
     public AudioSource _audioSource;
     [Tooltip("Microphone")]
@@ -27,8 +25,6 @@ public class VoiceToAnimation : MonoBehaviour
     [Tooltip("Default value is -11. This adjusts the sensitivity of the Spectrum.")]
     [Range(-1, -100)]public float _limitedSpectrum = -11;
     private Animator _anima;
-    [Tooltip("Make a Text Mesh Pro 3D.")]
-    [SerializeField]public TextMeshPro textmeshpro;
     
 
     // Start microphone before void Update
@@ -72,11 +68,11 @@ public class VoiceToAnimation : MonoBehaviour
 
         if (_spectrumCount < _limitedSpectrum)
         {
-            _anima.SetBool(_animationBoolName, false);
+            _anima.ResetTrigger(_animationTriggerName);
         }
         else
         {
-            _anima.SetBool(_animationBoolName, true);
+            _anima.SetTrigger(_animationTriggerName);
         }
 
 
@@ -87,12 +83,10 @@ public class VoiceToAnimation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             _limitedSpectrum = _limitedSpectrum + 1;
-            textmeshpro.text = _limitedSpectrum.ToString();
             // Block bypass the limits
             if (_limitedSpectrum.ToString() == "0")
             {
             _limitedSpectrum = -99;
-            textmeshpro.text = _limitedSpectrum.ToString();   
             }
         }
 
@@ -101,20 +95,11 @@ public class VoiceToAnimation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             _limitedSpectrum = _limitedSpectrum + -1;
-            textmeshpro.text = _limitedSpectrum.ToString();
             // Block bypass the limits
             if (_limitedSpectrum.ToString() == "-100")
             {
             _limitedSpectrum = -1;
-            textmeshpro.text = _limitedSpectrum.ToString();   
             }
-        }
-
-        // Hide Text Mesh Pro
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            textmeshpro.text = "";
         }
 
     }
